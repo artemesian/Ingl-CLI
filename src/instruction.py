@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, List
 from borsh_construct import *
 from solders.pubkey import Pubkey
 from solders.instruction import Instruction, AccountMeta
@@ -142,7 +142,7 @@ MarketInstructionEnum = Enum(
 
 
 def build_market_instruction(
-    instruction: MarketInstructionEnum.enum, accounts: list[AccountMeta]
+    instruction: MarketInstructionEnum.enum, accounts: List[AccountMeta]
 ) -> Instruction:
     return Instruction(
         program_id=get_market_program_id(),
